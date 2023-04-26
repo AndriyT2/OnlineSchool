@@ -17,7 +17,7 @@ public class AllPersons {
     private PersonService ps;
     @GetMapping(value = "/get")
 //  @RequestMapping          (value = "/get", method = RequestMethod.GET)
-//  public String d() { return  "tc/src/main/webapp/index.jsp";}
+//  public String d() { return  "tc/src/main/webapp/index.html";}
     public ResponseEntity<List<PersonEntity>> getAll(Model model){
 //    public String getAll(Model model){
 

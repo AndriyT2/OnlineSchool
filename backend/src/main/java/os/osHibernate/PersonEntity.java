@@ -1,6 +1,8 @@
 package os.osHibernate;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 import java.util.Objects;
@@ -36,6 +38,7 @@ public class PersonEntity {
     @Column(name = "person_id", nullable = false)
     private int personId;
     @Basic
+    @NotNull
     @Column(name = "lastname", nullable = true, length = 100)
     private String lastname;
     @Basic
@@ -45,9 +48,12 @@ public class PersonEntity {
     @Column(name = "phone", nullable = true, length = 13)
     private String phone;
     @Basic
+    @NotNull
+    @Email()
     @Column(name = "email", nullable = true, length = 100)
     private String email;
     @Basic
+    @NotNull
     @Column(name = "role", nullable = false)
     private Object role;
     @ManyToMany

@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/models/pom.xml" />
         <option value="$PROJECT_DIR$/repository/pom.xml" />
         <option value="$PROJECT_DIR$/service/pom.xml" />
+        <option value="$PROJECT_DIR$/tc/pom.xml" />
         <option value="$PROJECT_DIR$/utility/pom.xml" />
       </set>
     </option>

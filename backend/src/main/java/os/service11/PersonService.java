@@ -7,6 +7,7 @@ import os.osHibernate.PersonEntity;
 import os.osHibernate.StudentOnCourse;
 import os.repository.PersonRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -41,32 +42,31 @@ public class PersonService {
         return pr.teacherByLetter();
     }
 
-    public List<StudentOnCourse> studentOnCourses() {
-//        List<StudentOnCourse> list1 = null;
-//        List<StudentOnCourse> list2 = null;
-//        List<StudentOnCourse> list3 = null;
-//        List<StudentOnCourse> list = null;
-//
-//        for (StudentOnCourse student : pr.StudentOnCourse()) {
-//            if (student.getCourseTotalCount() == 1) {
-//                list1.add(student);
-//            }
-//            if (student.getCourseTotalCount() == 2) {
-//                list2.add(student);
-//            }
-//            if (student.getCourseTotalCount() >= 3) {
-//                list3.add(student);
-//            }
-//        }
-//        if (courseCount == 1) {
-//            list = list1;}
-//        if (courseCount == 2) {
-//            list = list2;}
-//        if (courseCount >=3){
-//            list = list3;
-//        }
-//        return list;
-    return pr.StudentOnCourse();
+    public List<StudentOnCourse> studentOnCourses(int courseCount) {
+        List<StudentOnCourse> list1 = new ArrayList<>();
+        List<StudentOnCourse> list2 = new ArrayList<>();
+        List<StudentOnCourse> list3 = new ArrayList<>();
+        List<StudentOnCourse> list = null;
+
+        for (StudentOnCourse student : pr.StudentOnCourse()) {
+            if (student.getCourseTotalCount() == 1) {
+                list1.add(student);
+            }
+            if (student.getCourseTotalCount() == 2) {
+                list2.add(student);
+            }
+            if (student.getCourseTotalCount() >= 3) {
+                list3.add(student);
+            }
+        }
+        if (courseCount == 1) {
+            list = list1;}
+        if (courseCount == 2) {
+            list = list2;}
+        if (courseCount >=3){
+            list = list3;
+        }
+        return list;
     }
 }
 

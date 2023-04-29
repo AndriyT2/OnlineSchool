@@ -19,8 +19,8 @@
     <tbody>
     <c:forEach var="am" items="${am}">
         <tr>
-            <td>${am.resourceType}</td>
-            <td>${am.typeTotal}</td>
+            <td>${am.name}</td>
+            <td>${am.amCount}</td>
 
         </tr>
     </c:forEach>

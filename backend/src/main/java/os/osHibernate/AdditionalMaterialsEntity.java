@@ -67,7 +67,8 @@ public class AdditionalMaterialsEntity {
         this.lectureName = lectureName;
     }
 
-
+    public AdditionalMaterialsEntity() {
+    }
 
     public LectureEntity getLecture() {
         return lecture;

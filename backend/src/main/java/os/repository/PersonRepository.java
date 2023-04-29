@@ -1,5 +1,6 @@
 package os.repository;
 
+import jakarta.validation.constraints.NotNull;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -11,7 +12,7 @@ import java.util.List;
 @Repository
 public interface PersonRepository extends JpaRepository<PersonEntity, Integer> {
 
-     List<PersonEntity> findAllByRoleOrderByLastname(Object role);
+     List<PersonEntity> findAllByRoleOrderByLastname(@NotNull Object role);
 
      @Query(value = "SELECT * FROM person where role = 'teacher' AND lastname REGEXP '^[A-N]|^[А-Г]'", nativeQuery = true) //|^[А-Н]and lastname like '^[A-N]'
      List<PersonEntity> teacherByLetter();
